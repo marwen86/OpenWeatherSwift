@@ -7,6 +7,7 @@
 //
 
 import XCTest
+@testable import OpenWeather
 
 class UtilitiesTest: XCTestCase {
 

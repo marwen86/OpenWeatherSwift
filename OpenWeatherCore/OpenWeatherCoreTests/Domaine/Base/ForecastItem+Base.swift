@@ -7,8 +7,10 @@
 //
 
 import Foundation
-extension WeatherItem: Equatable {
-    static func == (lhs: WeatherItem, rhs: WeatherItem) -> Bool {
+import OpenWeatherCore
+
+extension ForecastItem: Equatable {
+    public static func == (lhs: ForecastItem, rhs: ForecastItem) -> Bool {
         return true
     }
     
@@ -19,15 +21,14 @@ extension WeatherItem: Equatable {
                      deg: Int = 0,
                      clouds: Int = 0,
                      snow: Double = 0,
-                     weather: [WeatherItem.weather] = [],
-                     temp: WeatherItem.Temp? = nil) -> WeatherItem {
+                     weather: [WeatherItem] = [],
+                     temp: Temp? = nil) -> ForecastItem {
         
-     return WeatherItem(pressure: pressure,
+     return ForecastItem(pressure: pressure,
                         humidity: humidity,
                         speed: speed,
                         deg: deg,
                         clouds: clouds,
-                        snow: snow,
                         weather: weather,
                         temp: temp)
     }

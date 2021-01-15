@@ -7,7 +7,7 @@
 //
 
 import XCTest
-
+@testable import OpenWeather
 class Date_UtilsTest: XCTestCase {
 
     override func setUp() {
