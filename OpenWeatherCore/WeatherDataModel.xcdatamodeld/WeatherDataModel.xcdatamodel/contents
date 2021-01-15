@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="17192" systemVersion="19H15" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="CloudsEntity" representedClassName="CloudsEntity" syncable="YES" codeGenerationType="class">
+        <attribute name="cloud" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+    </entity>
+    <entity name="CurrentWeatherEntity" representedClassName="CurrentWeatherEntity" syncable="YES" codeGenerationType="class">
+        <attribute name="visibility" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <relationship name="clouds" optional="YES" maxCount="1" deletionRule="No Action" destinationEntity="CloudsEntity"/>
+        <relationship name="main" optional="YES" maxCount="1" deletionRule="No Action" destinationEntity="MainEntity"/>
+        <relationship name="request" optional="YES" maxCount="1" deletionRule="No Action" destinationEntity="CurrentWeatherRequestEntity"/>
+        <relationship name="weather" optional="YES" toMany="YES" deletionRule="No Action" destinationEntity="WeatherEntity"/>
+        <relationship name="wind" optional="YES" maxCount="1" deletionRule="No Action" destinationEntity="WindEntity"/>
+    </entity>
+    <entity name="CurrentWeatherRequestEntity" representedClassName="CurrentWeatherRequestEntity" syncable="YES" codeGenerationType="class">
+        <attribute name="query" optional="YES" attributeType="String"/>
+        <relationship name="response" optional="YES" maxCount="1" deletionRule="No Action" destinationEntity="CurrentWeatherEntity"/>
+    </entity>
+    <entity name="MainEntity" representedClassName="MainEntity" syncable="YES" codeGenerationType="class">
+        <attribute name="feelsLike" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="humidity" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="pressure" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="temp" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="tempMax" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="tempMin" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+    </entity>
+    <entity name="TempEntity" representedClassName="TempEntity" syncable="YES" codeGenerationType="class">
+        <attribute name="day" optional="YES" attributeType="Double" usesScalarValueType="YES"/>
+        <attribute name="eve" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="max" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="min" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="morn" optional="YES" attributeType="Double" usesScalarValueType="YES"/>
+        <attribute name="night" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <relationship name="response" optional="YES" maxCount="1" deletionRule="No Action" destinationEntity="WeatherForecastItemEntity"/>
+    </entity>
+    <entity name="WeatherEntity" representedClassName="WeatherEntity" syncable="YES" codeGenerationType="class">
+        <attribute name="descript" attributeType="String"/>
+        <attribute name="icon" attributeType="String"/>
+        <attribute name="id" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="main" attributeType="String"/>
+        <relationship name="response" optional="YES" maxCount="1" deletionRule="No Action" destinationEntity="WeatherForecastItemEntity"/>
+    </entity>
+    <entity name="WeatherForecastItemEntity" representedClassName="WeatherForecastItemEntity" syncable="YES" codeGenerationType="class">
+        <attribute name="city" optional="YES" attributeType="String"/>
+        <attribute name="clouds" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="deg" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="humidity" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="pressure" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="speed" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <relationship name="forecastResponse" optional="YES" maxCount="1" deletionRule="No Action" destinationEntity="WeatherForecastResponseEntity"/>
+        <relationship name="temp" maxCount="1" deletionRule="No Action" destinationEntity="TempEntity"/>
+        <relationship name="weather" toMany="YES" deletionRule="No Action" destinationEntity="WeatherEntity"/>
+    </entity>
+    <entity name="WeatherForecastRequestEntity" representedClassName="WeatherForecastRequestEntity" syncable="YES" codeGenerationType="class">
+        <attribute name="count" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="query" optional="YES" attributeType="String"/>
+        <relationship name="response" optional="YES" maxCount="1" deletionRule="No Action" destinationEntity="WeatherForecastResponseEntity"/>
+    </entity>
+    <entity name="WeatherForecastResponseEntity" representedClassName="WeatherForecastResponseEntity" syncable="YES" codeGenerationType="class">
+        <relationship name="list" optional="YES" toMany="YES" deletionRule="No Action" destinationEntity="WeatherForecastItemEntity"/>
+        <relationship name="request" optional="YES" maxCount="1" deletionRule="No Action" destinationEntity="WeatherForecastRequestEntity"/>
+    </entity>
+    <entity name="WindEntity" representedClassName="WindEntity" syncable="YES" codeGenerationType="class">
+        <attribute name="deg" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="speed" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+    </entity>
+    <elements>
+        <element name="CurrentWeatherRequestEntity" positionX="-4696.73046875" positionY="-358.91015625" width="128" height="73"/>
+        <element name="WeatherForecastResponseEntity" positionX="-4775.640625" positionY="-184.00390625" width="128" height="73"/>
+        <element name="TempEntity" positionX="-4214.15234375" positionY="-257.99609375" width="128" height="148"/>
+        <element name="CloudsEntity" positionX="-4113.06640625" positionY="-41.56640625" width="128" height="58"/>
+        <element name="WeatherForecastRequestEntity" positionX="-5034.9375" positionY="-198.546875" width="128" height="88"/>
+        <element name="WindEntity" positionX="-4115.0625" positionY="34.421875" width="128" height="73"/>
+        <element name="CurrentWeatherEntity" positionX="-4473.1171875" positionY="80.7109375" width="128" height="133"/>
+        <element name="MainEntity" positionX="-4111.21875" positionY="128.609375" width="128" height="133"/>
+        <element name="WeatherEntity" positionX="-4794.17578125" positionY="196.8203125" width="128" height="118"/>
+        <element name="WeatherForecastItemEntity" positionX="-4775.90625" positionY="-52.42578125" width="128" height="178"/>
+    </elements>
+</model>
