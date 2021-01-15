@@ -9,7 +9,7 @@
 import Foundation
 
 class DefaultCurrentWeatherRepository: CurrentWeatherRepository {
-    
+
     private let remote: RemoteDataServiceProtocol
     private let local: CurrentWeatherResponseStorage
     init(dataRemoteService: RemoteDataServiceProtocol, dataLocalService: CurrentWeatherResponseStorage) {
@@ -17,14 +17,60 @@ class DefaultCurrentWeatherRepository: CurrentWeatherRepository {
         self.local = dataLocalService
     }
     
-    func fetchAll(completion: @escaping (fetchAllResult) -> Void) {
+    private func updateCurrentWeather(list: [SearchSavedWeatherItem],
+                                      completion: @escaping (fetchAllResult) -> Void) {
+        func getRemoteData(city: String, block: @escaping () -> Void) {
+            let requestDTO = WeatherRequestDTO(query: city)
+            let endPoint = ApiGenerator.getCurrentWeather(with: requestDTO)
+            remote.fetch(endpoint: endPoint) { result in
+                switch result {
+                case .failure:
+                    block()
+                case .success(let result):
+                    self.local.insert(item: result, requestDTO: requestDTO, completion: {  _ in
+                        block()
+                    })
+                }
+            }
+        }
+        
+        let querys = list.map { $0.city }.compactMap { $0 }
+        let group = DispatchGroup()
+        querys.forEach { city in
+            group.enter()
+            getRemoteData(city: city) {
+                group.leave()
+            }
+        }
+        
+        group.notify(queue: DispatchQueue.main) {
+            self.local.retrieveAll(completion: { result in
+                switch result{
+                case .success(let items):
+                    let items = items.map { $0.toDomaine() }
+                    completion(.success(items))
+                case .failure(let error):
+                    completion(.failure(error))
+                }
+            })
+        }
+        
+        
+    }
+    
+    func fetchAll(cached: @escaping (fetchAllResult) -> Void,
+                  completion: @escaping (fetchAllResult) -> Void) {
+        
         // only fetch from local storage
-        self.local.retrieveAll(completion: { result in
+        self.local.retrieveAll(completion: { [weak self] result in
+            guard let self = self else { return }
             switch result{
             case .success(let items):
-                completion(.success(items.map { $0.toDomaine() }))
+                let items = items.map { $0.toDomaine() }
+                cached(.success(items))
+                self.updateCurrentWeather(list: items, completion: completion)
             case .failure(let error):
-                completion(.failure(error))
+                cached(.failure(error))
             }
         })
     }

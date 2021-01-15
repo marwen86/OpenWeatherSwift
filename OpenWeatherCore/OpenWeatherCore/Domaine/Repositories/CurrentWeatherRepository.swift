@@ -13,5 +13,6 @@ protocol CurrentWeatherRepository {
     
     func fetch(query: CurrentWeatherQuery,
                              completion: @escaping (fetchResult) -> Void)
-    func fetchAll(completion: @escaping (fetchAllResult) -> Void)
+    func fetchAll(cached: @escaping (fetchAllResult) -> Void,
+                  completion: @escaping (fetchAllResult) -> Void)
 }

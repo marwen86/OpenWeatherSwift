@@ -40,17 +40,24 @@ class CoreDataCurrentWeatherResponseStorage: CurrentWeatherResponseStorage {
     func insert(item: CurrentWeatherResponseDTO,
                 requestDTO: WeatherRequestDTO,
                 completion: @escaping (InsertionResult) -> Void) {
-        self.dataStorage.performBackgroundTask { (context) in
-            do {
-                let requestEntity = requestDTO.toEntity(in: context)
-                requestEntity.response = item.toEntity(in: context)
-                try context.save()
-                completion(.success(()))
-            } catch {
-                completion(.failure(error))
-                debugPrint("CoreDataMoviesResponseStorage Unresolved error \(error), \((error as NSError).userInfo)")
-            }
+        do {
+            try abortForecastData(requestDTO: requestDTO, completion: { result in
+                self.dataStorage.performBackgroundTask { (context) in
+                    do {
+                        let requestEntity = requestDTO.toEntity(in: context)
+                        requestEntity.response = item.toEntity(in: context)
+                        try context.save()
+                        completion(.success(()))
+                    } catch {
+                        completion(.failure(error))
+                        debugPrint("CoreDataMoviesResponseStorage Unresolved error \(error), \((error as NSError).userInfo)")
+                    }
+                }
+            })
+        } catch  {
+            debugPrint("CoreDataMoviesResponseStorage Unresolved error \(error), \((error as NSError).userInfo)")
         }
+        
     }
     
     func retrieve(with requestDTO: WeatherRequestDTO,
@@ -65,4 +72,22 @@ class CoreDataCurrentWeatherResponseStorage: CurrentWeatherResponseStorage {
             }
         }
     }
+    
+    private func abortForecastData(requestDTO: WeatherRequestDTO ,
+                                   completion: @escaping (Result<Bool, Error>) -> Void) throws {
+        dataStorage.performBackgroundTask { (context) in
+            do {
+                let fetchRequest = self.fetchRequest(for: requestDTO)
+                let requestEntity = try context.fetch(fetchRequest)
+                for item in requestEntity {
+                    context.delete(item)
+                }
+                try context.save()
+                completion(.success(true))
+            } catch {
+                completion(.failure(error))
+            }
+        }
+    }
+    
 }

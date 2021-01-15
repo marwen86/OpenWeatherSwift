@@ -21,6 +21,6 @@ class CurrentWeathersUseCase: CurrentWeathersUseCaseProtocol {
     }
     
     func execute(completion: @escaping (result) -> Void) {
-        self.repository.fetchAll(completion: completion)
+        self.repository.fetchAll(cached: completion, completion: completion)
     }
 }
