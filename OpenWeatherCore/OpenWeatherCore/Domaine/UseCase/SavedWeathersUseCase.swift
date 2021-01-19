@@ -6,12 +6,12 @@
 //
 
 import Foundation
-public protocol CurrentWeathersUseCaseProtocol {
+public protocol SavedWeathersUseCaseProtocol {
     typealias result = Swift.Result<[SearchSavedWeatherItem], Error>
     func execute(completion: @escaping (result) -> Void)
 }
 
-class CurrentWeathersUseCase: CurrentWeathersUseCaseProtocol {
+class SavedWeathersUseCase: SavedWeathersUseCaseProtocol {
     
     private let repository: CurrentWeatherRepository
     

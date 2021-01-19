@@ -11,8 +11,9 @@ public class OpenWeather {
     public struct UseCases {
         public let getIconUseCase: GetIconUseCaseProtocol
         public let addWeatherUseCase: AddWeatherUseCaseProtocol
-        public let currentWeathersUseCase: CurrentWeathersUseCaseProtocol
+        public let savedcurrentWeathersUseCase: SavedWeathersUseCaseProtocol
         public let forecastUseCase: ForecastUseCaseProtocol
+        public let fetchWeather: FetchWeatherUseCaseProtocol
     }
     
     public class func start(apiBaseUrl: String,
@@ -23,7 +24,8 @@ public class OpenWeather {
         let useCaseBuilder = UseCaseBuilder(serviceBuilder: serviceBuilder)
         return UseCases(getIconUseCase: useCaseBuilder.getIconUseCase,
                         addWeatherUseCase: useCaseBuilder.addWeatherUseCase,
-                        currentWeathersUseCase: useCaseBuilder.currentWeathersUseCase,
-                        forecastUseCase: useCaseBuilder.forecastUseCase)
+                        savedcurrentWeathersUseCase: useCaseBuilder.savedWeathersUseCase,
+                        forecastUseCase: useCaseBuilder.forecastUseCase,
+                        fetchWeather: useCaseBuilder.currentWeatherUseCase)
     }
 }

@@ -11,8 +11,6 @@ import UIKit
 protocol DailyForecastViewProtocol: class {
     var iconUseCase: GetIconUseCaseProtocol? { get }
     var interactor: HomeInteractorProtocol? { get }
-    var onShowDetail: ((String) -> Void)? { get }
-    var onShowForeCast: ((String) -> Void)? { get }
     func set(ViewModels: [WeatherItemViewModel])
     func set(error: String)
     var city: String? { get }
@@ -20,8 +18,7 @@ protocol DailyForecastViewProtocol: class {
 
 class DailyForecastViewController: UIViewController {
     var city: String?
-    var onShowDetail: ((String) -> Void)?
-    var onShowForeCast: ((String) -> Void)?
+  
     var iconUseCase: GetIconUseCaseProtocol?
     var interactor: HomeInteractorProtocol?
     @IBOutlet private var tableView: UITableView!
@@ -65,12 +62,6 @@ extension DailyForecastViewController: UITableViewDataSource, UITableViewDelegat
                                                    viewModel: items[indexPath.row])
         cell.fill()
         return cell
-    }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: false)
-        guard let city = city else { return }
-        self.onShowDetail?(city)
     }
     
 }

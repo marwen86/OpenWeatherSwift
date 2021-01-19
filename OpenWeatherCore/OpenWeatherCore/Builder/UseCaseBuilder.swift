@@ -23,16 +23,22 @@ final class UseCaseBuilder {
         return AddWeatherUseCase(repository: repository)
     }()
     
-    lazy var currentWeathersUseCase: CurrentWeathersUseCaseProtocol = {
+    lazy var savedWeathersUseCase: SavedWeathersUseCaseProtocol = {
         let repository = DefaultCurrentWeatherRepository(dataRemoteService: serviceBuilder.apiDataTransferService,
                                                          dataLocalService: serviceBuilder.currentWeatherDataStorage)
-        return CurrentWeathersUseCase(repository: repository)
+        return SavedWeathersUseCase(repository: repository)
     }()
     
     lazy var forecastUseCase: ForecastUseCaseProtocol = {
         let repository = DefaultCurrentForecastWeather(dataRemoteService: serviceBuilder.apiDataTransferService,
                                                        dataLocalService: serviceBuilder.forecastDataStorage)
         return ForecastUseCase(repository: repository)
+    }()
+    
+    lazy var currentWeatherUseCase: FetchWeatherUseCaseProtocol = {
+        let repository = DefaultCurrentWeatherRepository(dataRemoteService: serviceBuilder.apiDataTransferService,
+                                                         dataLocalService: serviceBuilder.currentWeatherDataStorage)
+        return FetchWeatherUseCase(repository: repository)
     }()
     
 }

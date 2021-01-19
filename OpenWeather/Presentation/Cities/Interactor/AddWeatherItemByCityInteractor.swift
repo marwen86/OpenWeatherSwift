@@ -14,11 +14,11 @@ protocol AddWeatherItemByCityInteractorProtocol {
 }
 
 class AddWeatherItemByCityInteractor: AddWeatherItemByCityInteractorProtocol, HomeInteractorProtocol {
-    private let getWeatherUseCase: CurrentWeathersUseCaseProtocol
+    private let getWeatherUseCase: SavedWeathersUseCaseProtocol
     private let addWeatherUserCase: AddWeatherUseCaseProtocol
     var presenter: CitiesListViewPresenterProtocol?
     
-    init(getWeatherUseCase: CurrentWeathersUseCaseProtocol, addWeatherUserCase: AddWeatherUseCaseProtocol) {
+    init(getWeatherUseCase: SavedWeathersUseCaseProtocol, addWeatherUserCase: AddWeatherUseCaseProtocol) {
         self.getWeatherUseCase = getWeatherUseCase
         self.addWeatherUserCase = addWeatherUserCase
     }

@@ -15,8 +15,6 @@ struct SearchWeatherItemViewModel {
     let image: String?
 }
 
-
-
 protocol CitiesListViewPresenterProtocol {
     func interactor(_ interactor: HomeInteractorProtocol, didFetch object: CurrentWeatherItem)
     func interactor(_ interactor: HomeInteractorProtocol, didFailWith error: Error)

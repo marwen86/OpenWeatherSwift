@@ -7,7 +7,7 @@
 //
 
 import Foundation
-
+    
 struct WeatherItemViewModel {
     let maxTemp: String
     let minTemp : String

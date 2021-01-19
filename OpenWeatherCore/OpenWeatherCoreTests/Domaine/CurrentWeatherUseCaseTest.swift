@@ -55,7 +55,7 @@ class CurrentWeatherUseCaseTest: XCTestCase {
         expectation.expectedFulfillmentCount = 2
         var expectedData = [SearchSavedWeatherItem]()
         let repository = RepositoryMock(response: .success(CurrentWeatherUseCaseTest.items))
-        let useCase = CurrentWeathersUseCase(repository: repository)
+        let useCase = SavedWeathersUseCase(repository: repository)
         
         useCase.execute { result in
             expectedData = (try? result.get()) ?? []
@@ -72,7 +72,7 @@ class CurrentWeatherUseCaseTest: XCTestCase {
         expectation.expectedFulfillmentCount = 2
         var expectedData = [SearchSavedWeatherItem]()
         let repository = RepositoryMock(response: .failure(weatherRepositoryTestError.failedFetching))
-        let useCase = CurrentWeathersUseCase(repository: repository)
+        let useCase = SavedWeathersUseCase(repository: repository)
         
         useCase.execute { result in
             expectedData = (try? result.get()) ?? []

@@ -12,7 +12,7 @@ final class ViewsBuilder {
     
     static func makeCitiesView(useCases: OpenWeather.UseCases) -> CitiesListViewController {
         //Intercator
-        let interactor = AddWeatherItemByCityInteractor(getWeatherUseCase: useCases.currentWeathersUseCase, addWeatherUserCase: useCases.addWeatherUseCase)
+        let interactor = AddWeatherItemByCityInteractor(getWeatherUseCase: useCases.savedcurrentWeathersUseCase, addWeatherUserCase: useCases.addWeatherUseCase)
         
         //View
         let view = CitiesListViewController(nibName: "CitiesListViewController", bundle: nil)
@@ -43,7 +43,19 @@ final class ViewsBuilder {
         return view
     }
     
-    static func makeDetail() -> DetailViewController {
-        return DetailViewController(nibName: "DetailViewController", bundle: nil)
+    static func makeDetail(useCases: OpenWeather.UseCases,city:String) -> DetailViewController {
+        //Intercator
+        let interactor = DetailViewInteractor(iconUseCase: useCases.getIconUseCase, itemUseCase: useCases.fetchWeather)
+        
+        //View
+        let view = DetailViewController(nibName: "DetailViewController", bundle: nil)
+       
+        //Presenter
+        let presenter = WeatherDetailViewPresenter()
+        view.city = city
+        view.interactor = interactor
+        presenter.view = view
+        interactor.presenter = presenter
+        return view
     }
 }

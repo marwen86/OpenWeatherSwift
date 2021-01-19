@@ -91,7 +91,7 @@ extension CitiesListViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: false)
         let viewModel = items[indexPath.row]
-        self.onShowForeCast?(viewModel.city)
+        self.onShowDetail?(viewModel.city)
     }
     
 }

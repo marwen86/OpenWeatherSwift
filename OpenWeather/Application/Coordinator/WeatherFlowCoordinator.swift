@@ -28,34 +28,34 @@ class WeatherFlowCoordinator: WeatherFlowCoordinatorProtocol {
         self.navigationController.pushViewController(view, animated: false)
     }
     
-    private func showDetail() {
-        let view = makeDetailViewController()
+    private func showDetail(city: String) {
+        let view = makeDetailViewController(city: city)
         self.navigationController.pushViewController(view, animated: true)
     }
     
     private func showForecast(city: String) {
         let view = makeDailyForecastController(city: city)
-        self.navigationController.pushViewController(view, animated: true)
+        self.navigationController.present(view, animated: true, completion: nil)
     }
     
     private func makeDailyForecastController(city: String) -> DailyForecastViewController {
         let view = ViewsBuilder.makeDailyForecastView(useCases: useCases, city: city)
-        view.onShowDetail = { city in
-            self.showDetail()
-        }
-        
         return view
     }
     
     private func makeCitiesViewController() -> CitiesListViewController {
         let view = ViewsBuilder.makeCitiesView(useCases: useCases)
-        view.onShowForeCast = { city in
-            self.showForecast(city: city)
+        view.onShowDetail = { city in
+            self.showDetail(city: city)
         }
         return view
     }
     
-    private func makeDetailViewController() -> DetailViewController {
-        return ViewsBuilder.makeDetail()
+    private func makeDetailViewController(city: String) -> DetailViewController {
+        let view = ViewsBuilder.makeDetail(useCases: useCases, city: city)
+        view.onShowForeCast = { city in
+            self.showForecast(city: city)
+        }
+        return view
     }
 }
