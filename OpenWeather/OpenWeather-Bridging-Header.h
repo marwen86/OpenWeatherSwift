@@ -12,3 +12,4 @@
 
 #endif /* OpenWeather_Bridging_Header_h */
 #import <OpenWeatherCore/OpenWeatherCore.h>
+#import <OpenWeather_UI/OpenWeather_UI.h>

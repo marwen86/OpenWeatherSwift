@@ -15,7 +15,8 @@ final class ViewsBuilder {
         let interactor = AddWeatherItemByCityInteractor(getWeatherUseCase: useCases.savedcurrentWeathersUseCase, addWeatherUserCase: useCases.addWeatherUseCase)
         
         //View
-        let view = CitiesListViewController(nibName: "CitiesListViewController", bundle: nil)
+        let bundle = Bundle(for: CitiesListViewController.self)
+        let view = CitiesListViewController(nibName: "CitiesListViewController", bundle: bundle)
        
         //Presenter
         let presenter = CitiesListViewPresenter()
@@ -31,7 +32,8 @@ final class ViewsBuilder {
         let interactor = HomeInteractor(forecastUseCase: useCases.forecastUseCase)
         
         //View
-        let view = DailyForecastViewController(nibName: "DailyForecastViewController", bundle: nil)
+        let bundle = Bundle(for: DailyForecastViewController.self)
+        let view = DailyForecastViewController(nibName: "DailyForecastViewController", bundle: bundle)
        
         //Presenter
         let presenter = DailyForecastViewPresenter()
@@ -48,7 +50,8 @@ final class ViewsBuilder {
         let interactor = DetailViewInteractor(iconUseCase: useCases.getIconUseCase, itemUseCase: useCases.fetchWeather)
         
         //View
-        let view = DetailViewController(nibName: "DetailViewController", bundle: nil)
+        let bundle = Bundle(for: DetailViewController.self)
+        let view = DetailViewController(nibName: "DetailViewController", bundle: bundle)
        
         //Presenter
         let presenter = WeatherDetailViewPresenter()

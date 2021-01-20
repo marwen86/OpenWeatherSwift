@@ -5,6 +5,9 @@
       location = "group:OpenWeather.xcodeproj">
    </FileRef>
    <FileRef
+      location = "group:OpenWeatherCore/../OpenWeather-UI/OpenWeather-UI.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:OpenWeatherCore/OpenWeatherCore.xcodeproj">
    </FileRef>
 </Workspace>
