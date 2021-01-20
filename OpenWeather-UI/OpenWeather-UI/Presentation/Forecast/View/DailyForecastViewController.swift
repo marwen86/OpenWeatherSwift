@@ -19,7 +19,7 @@ public protocol DailyForecastViewProtocol: class {
 
 public class DailyForecastViewController: UIViewController {
     public var city: String?
-  
+    
     public var iconUseCase: GetIconUseCaseProtocol?
     public var interactor: HomeInteractorProtocol?
     @IBOutlet private var tableView: UITableView!
@@ -40,6 +40,14 @@ public class DailyForecastViewController: UIViewController {
         //fetch data
         guard let city = city else { return }
         self.interactor?.fetchWeatherData(city: city)
+        let add = UIBarButtonItem(barButtonSystemItem: .done,
+                                  target: self,
+                                  action: #selector(close))
+        navigationItem.rightBarButtonItems = [add]
+    }
+    
+    @IBAction func close() {
+        self.dismiss(animated: true, completion: nil)
     }
 }
 

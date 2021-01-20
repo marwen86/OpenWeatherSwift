@@ -60,7 +60,10 @@ public class DetailViewController: UIViewController {
         super.viewDidLoad()
         
         
-        let add = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(showForecast))
+        let add = UIBarButtonItem(title: "Prévisions",
+                                  style: .plain,
+                                  target: self,
+                                  action: #selector(showForecast))
         navigationItem.rightBarButtonItems = [add]
         // Do any additional setup after loading the view.
         guard let city = city else { return }

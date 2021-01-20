@@ -35,7 +35,8 @@ class WeatherFlowCoordinator: WeatherFlowCoordinatorProtocol {
     
     private func showForecast(city: String) {
         let view = makeDailyForecastController(city: city)
-        self.navigationController.present(view, animated: true, completion: nil)
+        let navigationController = UINavigationController(rootViewController: view)
+        self.navigationController.present(navigationController, animated: true, completion: nil)
     }
     
     private func makeDailyForecastController(city: String) -> DailyForecastViewController {
