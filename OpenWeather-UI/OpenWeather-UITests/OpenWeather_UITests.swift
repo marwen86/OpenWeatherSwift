@@ -2,7 +2,7 @@
 //  OpenWeather_UITests.swift
 //  OpenWeather-UITests
 //
-//  Created by Youssef Marouane on 20/01/2021.
+//  Created by Youssef Marouane.
 //
 
 import XCTest

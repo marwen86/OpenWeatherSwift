@@ -2,7 +2,7 @@
 //  ForecasTUseCase.swift
 //  OpenWeatherCore
 //
-//  Created by Youssef Marouane on 14/01/2021.
+//  Created by Youssef Marouane.
 //
 
 import Foundation
@@ -17,9 +17,9 @@ public protocol ForecastUseCaseProtocol {
 
 class ForecastUseCase: ForecastUseCaseProtocol {
     
-    private let repository: ForecastWeatherRepository
+    private let repository: ForecastWeatherLoader
     
-    init(repository: ForecastWeatherRepository) {
+    init(repository: ForecastWeatherLoader) {
         
         self.repository = repository
     }

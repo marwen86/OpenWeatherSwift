@@ -16,9 +16,9 @@ public protocol GetIconUseCaseProtocol {
 
 class GetIconUseCase: GetIconUseCaseProtocol {
     
-    private let repository: PosterImagesRepository
+    private let repository: PosterImagesLoader
     
-    init(repository: PosterImagesRepository) {
+    init(repository: PosterImagesLoader) {
         
         self.repository = repository
     }

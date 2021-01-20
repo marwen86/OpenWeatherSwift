@@ -2,7 +2,7 @@
 //  CurrentWeatherUseCaseTest.swift
 //  OpenWeatherCoreTests
 //
-//  Created by Youssef Marouane on 15/01/2021.
+//  Created by Youssef Marouane.
 //
 
 import XCTest
@@ -38,7 +38,7 @@ class CurrentWeatherUseCaseTest: XCTestCase {
         case NetworkError
     }
     
-    struct RepositoryMock: CurrentWeatherRepository {
+    struct RepositoryMock: CurrentWeatherLoader {
         var response: Result<[SearchSavedWeatherItem], Error>
         func fetchAll(completion: @escaping (fetchAllResult) -> Void) {
             completion(response)

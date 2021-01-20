@@ -2,7 +2,7 @@
 //  OpenWeather.swift
 //  OpenWeatherCore
 //
-//  Created by Youssef Marouane on 14/01/2021.
+//  Created by Youssef Marouane.
 //
 
 import Foundation

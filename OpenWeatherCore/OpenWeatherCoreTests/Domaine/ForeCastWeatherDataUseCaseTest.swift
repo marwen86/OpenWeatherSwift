@@ -39,7 +39,7 @@ class ForeCastWeatherDataUseCaseTest: XCTestCase {
         case NetworkError
     }
     
-    struct RepositoryMock: ForecastWeatherRepository {
+    struct RepositoryMock: ForecastWeatherLoader {
         
         var remoteResponse: Result<[ForecastItem], Error>
         var cachResponse: Result<[ForecastItem], Error>

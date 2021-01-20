@@ -2,7 +2,7 @@
 //  OpenWeather-Bridging-Header.h
 //  OpenWeather
 //
-//  Created by Youssef Marouane on 15/01/2021.
+//  Created by Youssef Marouane.
 //  Copyright © 2021 Youssef Marouane. All rights reserved.
 //
 

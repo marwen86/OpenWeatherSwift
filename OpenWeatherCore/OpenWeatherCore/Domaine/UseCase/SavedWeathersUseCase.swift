@@ -2,7 +2,7 @@
 //  CurrentWeathersUseCase.swift
 //  OpenWeatherCore
 //
-//  Created by Youssef Marouane on 14/01/2021.
+//  Created by Youssef Marouane.
 //
 
 import Foundation
@@ -13,9 +13,9 @@ public protocol SavedWeathersUseCaseProtocol {
 
 class SavedWeathersUseCase: SavedWeathersUseCaseProtocol {
     
-    private let repository: CurrentWeatherRepository
+    private let repository: CurrentWeatherLoader
     
-    init(repository: CurrentWeatherRepository) {
+    init(repository: CurrentWeatherLoader) {
         
         self.repository = repository
     }

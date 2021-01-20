@@ -2,7 +2,7 @@
 //  FetchWeather.swift
 //  OpenWeatherCore
 //
-//  Created by Youssef Marouane on 19/01/2021.
+//  Created by Youssef Marouane.
 //
 
 import Foundation
@@ -15,9 +15,9 @@ public protocol FetchWeatherUseCaseProtocol {
 
 class FetchWeatherUseCase: FetchWeatherUseCaseProtocol {
 
-    private let repository: CurrentWeatherRepository
+    private let repository: CurrentWeatherLoader
     
-    init(repository: CurrentWeatherRepository) {
+    init(repository: CurrentWeatherLoader) {
         
         self.repository = repository
     }

@@ -15,9 +15,9 @@ public protocol AddWeatherUseCaseProtocol {
 
 class AddWeatherUseCase: AddWeatherUseCaseProtocol {
     
-    private let repository: CurrentWeatherRepository
+    private let repository: CurrentWeatherLoader
     
-    init(repository: CurrentWeatherRepository) {
+    init(repository: CurrentWeatherLoader) {
         
         self.repository = repository
     }

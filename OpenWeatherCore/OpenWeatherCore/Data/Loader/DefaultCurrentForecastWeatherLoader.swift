@@ -2,7 +2,7 @@
 //  DefaultCurrentForecastWeather.swift
 //  OpenWeather
 //
-//  Created by Youssef Marouane on 13/01/2021.
+//  Created by Youssef Marouane.
 //  Copyright © 2021 Youssef Marouane. All rights reserved.
 //
 

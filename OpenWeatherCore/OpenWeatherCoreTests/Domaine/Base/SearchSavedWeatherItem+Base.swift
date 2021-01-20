@@ -2,7 +2,7 @@
 //  SearchSavedWeatherItem+Base.swift
 //  OpenWeatherCoreTests
 //
-//  Created by Youssef Marouane on 15/01/2021.
+//  Created by Youssef Marouane.
 //
 
 import Foundation

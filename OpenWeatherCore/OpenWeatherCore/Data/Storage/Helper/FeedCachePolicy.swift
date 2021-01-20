@@ -2,7 +2,7 @@
 //  FeedCachePolicy.swift
 //  OpenWeatherCore
 //
-//  Created by Youssef Marouane on 20/01/2021.
+//  Created by Youssef Marouane.
 //
 
 import Foundation

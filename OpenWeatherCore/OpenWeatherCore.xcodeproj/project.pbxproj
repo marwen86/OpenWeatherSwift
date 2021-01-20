@@ -11,9 +11,9 @@
 		6FEC275425B0EFAA002C6792 /* OpenWeatherCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6FEC274A25B0EFA9002C6792 /* OpenWeatherCore.framework */; };
 		6FEC275925B0EFAA002C6792 /* OpenWeatherCoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FEC275825B0EFAA002C6792 /* OpenWeatherCoreTests.swift */; };
 		6FEC275B25B0EFAA002C6792 /* OpenWeatherCore.h in Headers */ = {isa = PBXBuildFile; fileRef = 6FEC274D25B0EFA9002C6792 /* OpenWeatherCore.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		6FEC27A325B0EFE3002C6792 /* DefaultCurrentWeatherRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FEC276825B0EFE3002C6792 /* DefaultCurrentWeatherRepository.swift */; };
-		6FEC27A425B0EFE3002C6792 /* DefaultCurrentForecastWeather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FEC276925B0EFE3002C6792 /* DefaultCurrentForecastWeather.swift */; };
-		6FEC27A525B0EFE3002C6792 /* DefaultPosterImagesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FEC276A25B0EFE3002C6792 /* DefaultPosterImagesRepository.swift */; };
+		6FEC27A325B0EFE3002C6792 /* DefaultCurrentWeatherLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FEC276825B0EFE3002C6792 /* DefaultCurrentWeatherLoader.swift */; };
+		6FEC27A425B0EFE3002C6792 /* DefaultCurrentForecastWeatherLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FEC276925B0EFE3002C6792 /* DefaultCurrentForecastWeatherLoader.swift */; };
+		6FEC27A525B0EFE3002C6792 /* DefaultPosterImagesLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FEC276A25B0EFE3002C6792 /* DefaultPosterImagesLoader.swift */; };
 		6FEC27A625B0EFE3002C6792 /* ForecastWeatherResponseStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FEC276F25B0EFE3002C6792 /* ForecastWeatherResponseStorage.swift */; };
 		6FEC27A725B0EFE3002C6792 /* CoreDataForecastResponseDataStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FEC277025B0EFE3002C6792 /* CoreDataForecastResponseDataStorage.swift */; };
 		6FEC27A825B0EFE3002C6792 /* WeatherForecastItemEntity+Mapping.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FEC277125B0EFE3002C6792 /* WeatherForecastItemEntity+Mapping.swift */; };
@@ -33,9 +33,9 @@
 		6FEC27B925B0EFE4002C6792 /* WeatherRequestDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FEC278D25B0EFE3002C6792 /* WeatherRequestDTO.swift */; };
 		6FEC27BA25B0EFE4002C6792 /* SearchSavedWeatherResponseDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FEC278E25B0EFE3002C6792 /* SearchSavedWeatherResponseDTO.swift */; };
 		6FEC27BB25B0EFE4002C6792 /* CurrentWeatherResponseDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FEC278F25B0EFE3002C6792 /* CurrentWeatherResponseDTO.swift */; };
-		6FEC27BC25B0EFE4002C6792 /* ForecastWeatherRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FEC279225B0EFE3002C6792 /* ForecastWeatherRepository.swift */; };
-		6FEC27BD25B0EFE4002C6792 /* CurrentWeatherRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FEC279325B0EFE3002C6792 /* CurrentWeatherRepository.swift */; };
-		6FEC27BE25B0EFE4002C6792 /* PosterImagesRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FEC279425B0EFE3002C6792 /* PosterImagesRepository.swift */; };
+		6FEC27BC25B0EFE4002C6792 /* ForecastWeatherLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FEC279225B0EFE3002C6792 /* ForecastWeatherLoader.swift */; };
+		6FEC27BD25B0EFE4002C6792 /* CurrentWeatherLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FEC279325B0EFE3002C6792 /* CurrentWeatherLoader.swift */; };
+		6FEC27BE25B0EFE4002C6792 /* PosterImagesLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FEC279425B0EFE3002C6792 /* PosterImagesLoader.swift */; };
 		6FEC27BF25B0EFE4002C6792 /* SearchSavedWeatherItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FEC279625B0EFE3002C6792 /* SearchSavedWeatherItem.swift */; };
 		6FEC27C125B0EFE4002C6792 /* ForecastWeatherQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FEC279825B0EFE3002C6792 /* ForecastWeatherQuery.swift */; };
 		6FEC27C325B0EFE4002C6792 /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FEC279A25B0EFE3002C6792 /* Weather.swift */; };
@@ -83,9 +83,9 @@
 		6FEC275325B0EFAA002C6792 /* OpenWeatherCoreTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OpenWeatherCoreTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6FEC275825B0EFAA002C6792 /* OpenWeatherCoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenWeatherCoreTests.swift; sourceTree = "<group>"; };
 		6FEC275A25B0EFAA002C6792 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		6FEC276825B0EFE3002C6792 /* DefaultCurrentWeatherRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultCurrentWeatherRepository.swift; sourceTree = "<group>"; };
-		6FEC276925B0EFE3002C6792 /* DefaultCurrentForecastWeather.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultCurrentForecastWeather.swift; sourceTree = "<group>"; };
-		6FEC276A25B0EFE3002C6792 /* DefaultPosterImagesRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultPosterImagesRepository.swift; sourceTree = "<group>"; };
+		6FEC276825B0EFE3002C6792 /* DefaultCurrentWeatherLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultCurrentWeatherLoader.swift; sourceTree = "<group>"; };
+		6FEC276925B0EFE3002C6792 /* DefaultCurrentForecastWeatherLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultCurrentForecastWeatherLoader.swift; sourceTree = "<group>"; };
+		6FEC276A25B0EFE3002C6792 /* DefaultPosterImagesLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultPosterImagesLoader.swift; sourceTree = "<group>"; };
 		6FEC276F25B0EFE3002C6792 /* ForecastWeatherResponseStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForecastWeatherResponseStorage.swift; sourceTree = "<group>"; };
 		6FEC277025B0EFE3002C6792 /* CoreDataForecastResponseDataStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataForecastResponseDataStorage.swift; sourceTree = "<group>"; };
 		6FEC277125B0EFE3002C6792 /* WeatherForecastItemEntity+Mapping.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "WeatherForecastItemEntity+Mapping.swift"; sourceTree = "<group>"; };
@@ -106,9 +106,9 @@
 		6FEC278D25B0EFE3002C6792 /* WeatherRequestDTO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherRequestDTO.swift; sourceTree = "<group>"; };
 		6FEC278E25B0EFE3002C6792 /* SearchSavedWeatherResponseDTO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchSavedWeatherResponseDTO.swift; sourceTree = "<group>"; };
 		6FEC278F25B0EFE3002C6792 /* CurrentWeatherResponseDTO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrentWeatherResponseDTO.swift; sourceTree = "<group>"; };
-		6FEC279225B0EFE3002C6792 /* ForecastWeatherRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForecastWeatherRepository.swift; sourceTree = "<group>"; };
-		6FEC279325B0EFE3002C6792 /* CurrentWeatherRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrentWeatherRepository.swift; sourceTree = "<group>"; };
-		6FEC279425B0EFE3002C6792 /* PosterImagesRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PosterImagesRepository.swift; sourceTree = "<group>"; };
+		6FEC279225B0EFE3002C6792 /* ForecastWeatherLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForecastWeatherLoader.swift; sourceTree = "<group>"; };
+		6FEC279325B0EFE3002C6792 /* CurrentWeatherLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrentWeatherLoader.swift; sourceTree = "<group>"; };
+		6FEC279425B0EFE3002C6792 /* PosterImagesLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PosterImagesLoader.swift; sourceTree = "<group>"; };
 		6FEC279625B0EFE3002C6792 /* SearchSavedWeatherItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchSavedWeatherItem.swift; sourceTree = "<group>"; };
 		6FEC279825B0EFE3002C6792 /* ForecastWeatherQuery.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForecastWeatherQuery.swift; sourceTree = "<group>"; };
 		6FEC279A25B0EFE3002C6792 /* Weather.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Weather.swift; sourceTree = "<group>"; };
@@ -212,7 +212,7 @@
 		6FEC276625B0EFE3002C6792 /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				6FEC276725B0EFE3002C6792 /* Repositories */,
+				6FEC276725B0EFE3002C6792 /* Loader */,
 				6FEC276B25B0EFE3002C6792 /* Storage */,
 				6FEC278125B0EFE3002C6792 /* Api */,
 				6FEC278625B0EFE3002C6792 /* Entities */,
@@ -220,14 +220,14 @@
 			path = Data;
 			sourceTree = "<group>";
 		};
-		6FEC276725B0EFE3002C6792 /* Repositories */ = {
+		6FEC276725B0EFE3002C6792 /* Loader */ = {
 			isa = PBXGroup;
 			children = (
-				6FEC276825B0EFE3002C6792 /* DefaultCurrentWeatherRepository.swift */,
-				6FEC276925B0EFE3002C6792 /* DefaultCurrentForecastWeather.swift */,
-				6FEC276A25B0EFE3002C6792 /* DefaultPosterImagesRepository.swift */,
+				6FEC276825B0EFE3002C6792 /* DefaultCurrentWeatherLoader.swift */,
+				6FEC276925B0EFE3002C6792 /* DefaultCurrentForecastWeatherLoader.swift */,
+				6FEC276A25B0EFE3002C6792 /* DefaultPosterImagesLoader.swift */,
 			);
-			path = Repositories;
+			path = Loader;
 			sourceTree = "<group>";
 		};
 		6FEC276B25B0EFE3002C6792 /* Storage */ = {
@@ -356,20 +356,20 @@
 			isa = PBXGroup;
 			children = (
 				6FEC281725B0F907002C6792 /* UseCase */,
-				6FEC279125B0EFE3002C6792 /* Repositories */,
+				6FEC279125B0EFE3002C6792 /* Loader */,
 				6FEC279525B0EFE3002C6792 /* Entities */,
 			);
 			path = Domaine;
 			sourceTree = "<group>";
 		};
-		6FEC279125B0EFE3002C6792 /* Repositories */ = {
+		6FEC279125B0EFE3002C6792 /* Loader */ = {
 			isa = PBXGroup;
 			children = (
-				6FEC279225B0EFE3002C6792 /* ForecastWeatherRepository.swift */,
-				6FEC279325B0EFE3002C6792 /* CurrentWeatherRepository.swift */,
-				6FEC279425B0EFE3002C6792 /* PosterImagesRepository.swift */,
+				6FEC279225B0EFE3002C6792 /* ForecastWeatherLoader.swift */,
+				6FEC279325B0EFE3002C6792 /* CurrentWeatherLoader.swift */,
+				6FEC279425B0EFE3002C6792 /* PosterImagesLoader.swift */,
 			);
-			path = Repositories;
+			path = Loader;
 			sourceTree = "<group>";
 		};
 		6FEC279525B0EFE3002C6792 /* Entities */ = {
@@ -568,7 +568,7 @@
 				6FEC27C125B0EFE4002C6792 /* ForecastWeatherQuery.swift in Sources */,
 				6FEC27C625B0EFE4002C6792 /* CurrentWeatherItem.swift in Sources */,
 				6FEC27C925B0EFE4002C6792 /* NetworkConfig.swift in Sources */,
-				6FEC27A325B0EFE3002C6792 /* DefaultCurrentWeatherRepository.swift in Sources */,
+				6FEC27A325B0EFE3002C6792 /* DefaultCurrentWeatherLoader.swift in Sources */,
 				6FEC27B525B0EFE4002C6792 /* ForecastWeatherRequestDTO.swift in Sources */,
 				6FEC283825B0FDB6002C6792 /* ApiConfiguration.swift in Sources */,
 				6FEC27B825B0EFE4002C6792 /* WeatherDTO.swift in Sources */,
@@ -583,7 +583,7 @@
 				6FEC284225B10A52002C6792 /* UseCaseBuilder.swift in Sources */,
 				6FB5120225B8D7FF004574F1 /* FeedCachePolicy.swift in Sources */,
 				6FEC27B225B0EFE4002C6792 /* RemoteDataServiceProtocol.swift in Sources */,
-				6FEC27A425B0EFE3002C6792 /* DefaultCurrentForecastWeather.swift in Sources */,
+				6FEC27A425B0EFE3002C6792 /* DefaultCurrentForecastWeatherLoader.swift in Sources */,
 				6FEC27C825B0EFE4002C6792 /* Endpoint.swift in Sources */,
 				6FEC27BF25B0EFE4002C6792 /* SearchSavedWeatherItem.swift in Sources */,
 				6FEC27C725B0EFE4002C6792 /* NetworkService.swift in Sources */,
@@ -592,21 +592,21 @@
 				6FEC27A925B0EFE3002C6792 /* CoreDataStorageService.swift in Sources */,
 				6FEC27AA25B0EFE3002C6792 /* CurrentWeatherResponseStorage.swift in Sources */,
 				6FEC27AB25B0EFE3002C6792 /* CoreDataCurrentWeatherResponseStorage.swift in Sources */,
-				6FEC27BE25B0EFE4002C6792 /* PosterImagesRepository.swift in Sources */,
+				6FEC27BE25B0EFE4002C6792 /* PosterImagesLoader.swift in Sources */,
 				6FEC27B125B0EFE4002C6792 /* DefaultImageStorage.swift in Sources */,
 				6FEC27C525B0EFE4002C6792 /* ForecastItem.swift in Sources */,
 				6FEC27A825B0EFE3002C6792 /* WeatherForecastItemEntity+Mapping.swift in Sources */,
 				6FEC27AD25B0EFE3002C6792 /* CurrentWeatherItemEntity+Mapping.swift in Sources */,
 				6FEC27BB25B0EFE4002C6792 /* CurrentWeatherResponseDTO.swift in Sources */,
 				6FEC27B625B0EFE4002C6792 /* WeatherForecastItemsResponseDTO.swift in Sources */,
-				6FEC27BC25B0EFE4002C6792 /* ForecastWeatherRepository.swift in Sources */,
+				6FEC27BC25B0EFE4002C6792 /* ForecastWeatherLoader.swift in Sources */,
 				6FEC27C325B0EFE4002C6792 /* Weather.swift in Sources */,
 				6FEC27AC25B0EFE3002C6792 /* WeatherEntity+Mapping.swift in Sources */,
 				6FEC281A25B0F917002C6792 /* AddWeatherUseCase.swift in Sources */,
 				6FEC27BA25B0EFE4002C6792 /* SearchSavedWeatherResponseDTO.swift in Sources */,
-				6FEC27A525B0EFE3002C6792 /* DefaultPosterImagesRepository.swift in Sources */,
+				6FEC27A525B0EFE3002C6792 /* DefaultPosterImagesLoader.swift in Sources */,
 				6FEC281B25B0F917002C6792 /* GetIconUseCase.swift in Sources */,
-				6FEC27BD25B0EFE4002C6792 /* CurrentWeatherRepository.swift in Sources */,
+				6FEC27BD25B0EFE4002C6792 /* CurrentWeatherLoader.swift in Sources */,
 				6FEC282725B0FB37002C6792 /* SavedWeathersUseCase.swift in Sources */,
 				6FEC2D0F25B70379002C6792 /* FetchWeatherUseCase.swift in Sources */,
 			);
