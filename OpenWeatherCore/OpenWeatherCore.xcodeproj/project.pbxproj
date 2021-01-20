@@ -8,6 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		6FB5120225B8D7FF004574F1 /* FeedCachePolicy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FB5120125B8D7FF004574F1 /* FeedCachePolicy.swift */; };
+		6FB5122325B8E72B004574F1 /* CurrentWeatherLoader+Mock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FB5122225B8E72B004574F1 /* CurrentWeatherLoader+Mock.swift */; };
+		6FB5122925B8E73F004574F1 /* ForecastWeatherLoader+Mock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FB5122825B8E73F004574F1 /* ForecastWeatherLoader+Mock.swift */; };
+		6FB5122D25B8E967004574F1 /* LocalDataServiceTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FB5122C25B8E967004574F1 /* LocalDataServiceTest.swift */; };
+		6FB5123925B8EB87004574F1 /* NetworkConfigurableMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FB5123525B8EB87004574F1 /* NetworkConfigurableMock.swift */; };
+		6FB5123A25B8EB87004574F1 /* NetworkSessionManagerMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FB5123625B8EB87004574F1 /* NetworkSessionManagerMock.swift */; };
+		6FB5123B25B8EB87004574F1 /* NetworkServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FB5123725B8EB87004574F1 /* NetworkServiceTests.swift */; };
+		6FB5124425B8EE58004574F1 /* Network+Mock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FB5124325B8EE58004574F1 /* Network+Mock.swift */; };
 		6FEC275425B0EFAA002C6792 /* OpenWeatherCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6FEC274A25B0EFA9002C6792 /* OpenWeatherCore.framework */; };
 		6FEC275925B0EFAA002C6792 /* OpenWeatherCoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FEC275825B0EFAA002C6792 /* OpenWeatherCoreTests.swift */; };
 		6FEC275B25B0EFAA002C6792 /* OpenWeatherCore.h in Headers */ = {isa = PBXBuildFile; fileRef = 6FEC274D25B0EFA9002C6792 /* OpenWeatherCore.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -77,6 +84,13 @@
 
 /* Begin PBXFileReference section */
 		6FB5120125B8D7FF004574F1 /* FeedCachePolicy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedCachePolicy.swift; sourceTree = "<group>"; };
+		6FB5122225B8E72B004574F1 /* CurrentWeatherLoader+Mock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CurrentWeatherLoader+Mock.swift"; sourceTree = "<group>"; };
+		6FB5122825B8E73F004574F1 /* ForecastWeatherLoader+Mock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ForecastWeatherLoader+Mock.swift"; sourceTree = "<group>"; };
+		6FB5122C25B8E967004574F1 /* LocalDataServiceTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalDataServiceTest.swift; sourceTree = "<group>"; };
+		6FB5123525B8EB87004574F1 /* NetworkConfigurableMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkConfigurableMock.swift; sourceTree = "<group>"; };
+		6FB5123625B8EB87004574F1 /* NetworkSessionManagerMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkSessionManagerMock.swift; sourceTree = "<group>"; };
+		6FB5123725B8EB87004574F1 /* NetworkServiceTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkServiceTests.swift; sourceTree = "<group>"; };
+		6FB5124325B8EE58004574F1 /* Network+Mock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Network+Mock.swift"; sourceTree = "<group>"; };
 		6FEC274A25B0EFA9002C6792 /* OpenWeatherCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = OpenWeatherCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6FEC274D25B0EFA9002C6792 /* OpenWeatherCore.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OpenWeatherCore.h; sourceTree = "<group>"; };
 		6FEC274E25B0EFA9002C6792 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -165,6 +179,34 @@
 			path = Helper;
 			sourceTree = "<group>";
 		};
+		6FB5122125B8E710004574F1 /* Mock */ = {
+			isa = PBXGroup;
+			children = (
+				6FB5122225B8E72B004574F1 /* CurrentWeatherLoader+Mock.swift */,
+				6FB5122825B8E73F004574F1 /* ForecastWeatherLoader+Mock.swift */,
+			);
+			path = Mock;
+			sourceTree = "<group>";
+		};
+		6FB5123325B8EB87004574F1 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				6FB5123425B8EB87004574F1 /* Mocks */,
+				6FB5123725B8EB87004574F1 /* NetworkServiceTests.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		6FB5123425B8EB87004574F1 /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				6FB5123525B8EB87004574F1 /* NetworkConfigurableMock.swift */,
+				6FB5123625B8EB87004574F1 /* NetworkSessionManagerMock.swift */,
+				6FB5124325B8EE58004574F1 /* Network+Mock.swift */,
+			);
+			path = Mocks;
+			sourceTree = "<group>";
+		};
 		6FEC274025B0EFA9002C6792 = {
 			isa = PBXGroup;
 			children = (
@@ -201,6 +243,7 @@
 		6FEC275725B0EFAA002C6792 /* OpenWeatherCoreTests */ = {
 			isa = PBXGroup;
 			children = (
+				6FB5123325B8EB87004574F1 /* Network */,
 				6FEC2A3025B1E1CA002C6792 /* Data */,
 				6FEC2A3325B1E1CB002C6792 /* Domaine */,
 				6FEC275825B0EFAA002C6792 /* OpenWeatherCoreTests.swift */,
@@ -430,6 +473,7 @@
 			children = (
 				6FEC2A3125B1E1CA002C6792 /* responseObject */,
 				6FEC2A3225B1E1CA002C6792 /* RemoteDataServiceTest.swift */,
+				6FB5122C25B8E967004574F1 /* LocalDataServiceTest.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -437,6 +481,7 @@
 		6FEC2A3325B1E1CB002C6792 /* Domaine */ = {
 			isa = PBXGroup;
 			children = (
+				6FB5122125B8E710004574F1 /* Mock */,
 				6FEC2A6425B1F5F3002C6792 /* Base */,
 				6FEC2A3425B1E1CB002C6792 /* ForeCastWeatherDataUseCaseTest.swift */,
 				6FEC2A5E25B1F465002C6792 /* CurrentWeatherUseCaseTest.swift */,
@@ -618,12 +663,19 @@
 			files = (
 				6FEC2A7025B1FA84002C6792 /* AddWeatherUseCaseTest.swift in Sources */,
 				6FEC2A3825B1E1CB002C6792 /* ForeCastWeatherDataUseCaseTest.swift in Sources */,
+				6FB5122D25B8E967004574F1 /* LocalDataServiceTest.swift in Sources */,
 				6FEC275925B0EFAA002C6792 /* OpenWeatherCoreTests.swift in Sources */,
 				6FEC2A6625B1F612002C6792 /* SearchSavedWeatherItem+Base.swift in Sources */,
 				6FEC2A5F25B1F465002C6792 /* CurrentWeatherUseCaseTest.swift in Sources */,
 				6FEC2A6C25B1F6AB002C6792 /* CurrentWeatherItem+Base.swift in Sources */,
 				6FEC2A3925B1E1CB002C6792 /* ForecastItem+Base.swift in Sources */,
+				6FB5123B25B8EB87004574F1 /* NetworkServiceTests.swift in Sources */,
 				6FEC2A3725B1E1CB002C6792 /* RemoteDataServiceTest.swift in Sources */,
+				6FB5123A25B8EB87004574F1 /* NetworkSessionManagerMock.swift in Sources */,
+				6FB5123925B8EB87004574F1 /* NetworkConfigurableMock.swift in Sources */,
+				6FB5122925B8E73F004574F1 /* ForecastWeatherLoader+Mock.swift in Sources */,
+				6FB5122325B8E72B004574F1 /* CurrentWeatherLoader+Mock.swift in Sources */,
+				6FB5124425B8EE58004574F1 /* Network+Mock.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
