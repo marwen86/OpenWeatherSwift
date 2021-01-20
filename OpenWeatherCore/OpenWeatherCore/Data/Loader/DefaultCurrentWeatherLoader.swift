@@ -8,8 +8,8 @@
 
 import Foundation
 
-class DefaultCurrentWeatherRepository: CurrentWeatherRepository {
-
+class DefaultCurrentWeatherLoader: CurrentWeatherLoader {
+    
     private let remote: RemoteDataServiceProtocol
     private let local: CurrentWeatherResponseStorage
     init(dataRemoteService: RemoteDataServiceProtocol, dataLocalService: CurrentWeatherResponseStorage) {
@@ -80,34 +80,33 @@ class DefaultCurrentWeatherRepository: CurrentWeatherRepository {
         
         // call remote find only if local storage return empty or nil
         let requestDTO = WeatherRequestDTO(query: query.query)
-        func getRemoteData() {
-            let endPoint = ApiGenerator.getCurrentWeather(with: requestDTO)
-            remote.fetch(endpoint: endPoint) { result in
-                switch result {
-                case .failure(let error):
-                    completion(.failure(error))
-                case .success(let result):
-                    self.local.insert(item: result, requestDTO: requestDTO, completion: {  _ in
-                        completion(.success(result.toDomaine()))
-                    })
-                }
+        
+        let endPoint = ApiGenerator.getCurrentWeather(with: requestDTO)
+        remote.fetch(endpoint: endPoint) { result in
+            switch result {
+            case .failure:
+                loadLocalData()
+            case .success(let result):
+                self.local.insert(item: result, requestDTO: requestDTO, completion: {  _ in
+                    completion(.success(result.toDomaine()))
+                })
             }
         }
         
-        self.local.retrieve(with: requestDTO,
-                            completion: { result in
-                                switch result{
-                                case .success(let item):
-                                    guard let item = item else {
-                                        getRemoteData()
-                                        return
+        func loadLocalData() {
+            self.local.retrieve(with: requestDTO,
+                                completion: { result in
+                                    switch result{
+                                    case .success(let item):
+                                        guard let item = item else {
+                                            return
+                                        }
+                                        completion(.success(item.toDomaine()))
+                                    case .failure(let error):
+                                        completion(.failure(error))
+                                        
                                     }
-                                    completion(.success(item.toDomaine()))
-                                case .failure(let error):
-                                    completion(.failure(error))
-                                    
-                                }
-                            })
-        
+                                })
+        }
     }
 }

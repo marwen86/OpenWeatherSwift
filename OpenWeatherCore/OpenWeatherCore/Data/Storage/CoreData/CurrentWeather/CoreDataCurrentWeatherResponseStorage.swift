@@ -65,8 +65,15 @@ class CoreDataCurrentWeatherResponseStorage: CurrentWeatherResponseStorage {
         dataStorage.performBackgroundTask { (context) in
             do {
                 let fetchRequest = self.fetchRequest(for: requestDTO)
-                let requestEntity = try context.fetch(fetchRequest).first
-                completion(.success(requestEntity?.response?.toDTO()))
+                guard let requestEntity = try context.fetch(fetchRequest).first,
+                      let response = requestEntity.response,
+                      let timestamp = response.timestamp,
+                      FeedCachePolicy.validate(timestamp, against: Date()) else {
+                    completion(.success(.empty))
+                    return
+                }
+                
+                completion(.success(response.toDTO()))
             } catch {
                 completion(.failure(CoreDataStorageError.readError(error)))
             }

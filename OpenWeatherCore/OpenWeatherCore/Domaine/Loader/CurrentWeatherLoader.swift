@@ -7,7 +7,7 @@
 //
 
 import Foundation
-protocol CurrentWeatherRepository {
+protocol CurrentWeatherLoader {
     typealias fetchResult = Swift.Result<CurrentWeatherItem?, Error>
     typealias fetchAllResult = Swift.Result<[SearchSavedWeatherItem], Error>
     

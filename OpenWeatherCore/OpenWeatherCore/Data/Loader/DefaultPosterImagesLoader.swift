@@ -8,7 +8,7 @@
 
 import Foundation
 
-class DefaultPosterImagesRepository: PosterImagesRepository {
+class DefaultPosterImagesLoader: PosterImagesLoader {
     
     private let local: ImageStorage
     private let remoteService: RemoteDataServiceProtocol
@@ -19,34 +19,30 @@ class DefaultPosterImagesRepository: PosterImagesRepository {
     }
     
     func fetch(with icon: String, completion: @escaping (fetchResult) -> Void) {
-        
-        self.local.retrieve(dataForURL: icon) { result in
+        let endPoint = ApiGenerator.getWeatherIcon(icon: icon)
+        remoteService.fetchImage(endpoint: endPoint) { result in
             switch result {
-            case let .success(data):
-                guard let data = data else {
-                    fetchRemoteImage()
-                    return
-                }
-                completion(.success(data))
             case .failure:
-                fetchRemoteImage()
+                fetchLocalData()
+            case .success(let data):
+                completion(.success(data))
+                self.local.insert(data, for: icon) { _ in
+                }
             }
         }
         
-        func fetchRemoteImage() {
-            let endPoint = ApiGenerator.getWeatherIcon(icon: icon)
-            remoteService.fetchImage(endpoint: endPoint) { result in
+        func fetchLocalData() {
+            self.local.retrieve(dataForURL: icon) { result in
                 switch result {
+                case let .success(data):
+                    guard let data = data else {
+                        return
+                    }
+                    completion(.success(data))
                 case .failure(let error):
                     completion(.failure(error))
-                case .success(let data):
-                    completion(.success(data))
-                    self.local.insert(data, for: icon) { _ in
-                        
-                    }
                 }
             }
         }
-        
     }
 }

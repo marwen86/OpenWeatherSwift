@@ -25,6 +25,7 @@ extension WeatherDTO {
         entity.descript = description
         entity.icon = icon
         entity.main = main
+        entity.timestamp = Date()
         return entity
     }
     

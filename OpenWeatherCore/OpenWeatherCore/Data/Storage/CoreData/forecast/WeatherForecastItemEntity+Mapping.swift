@@ -45,6 +45,7 @@ extension WeatherForecastItemsResponseDTO {
         list.forEach {
             entity.addToList($0.toEntity(in: context))
         }
+        entity.timestamp = Date()
         return entity
     }
 }

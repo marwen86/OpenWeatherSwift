@@ -21,6 +21,12 @@ struct CurrentWeatherResponseDTO: Decodable {
         case clouds
         case main
     }
+    
+    static let empty: CurrentWeatherResponseDTO = CurrentWeatherResponseDTO(weather: [],
+                                                                            visibility: 0,
+                                                                            wind: nil,
+                                                                            clouds: nil,
+                                                                            main: nil)
 }
 
 struct MainDTO: Decodable {

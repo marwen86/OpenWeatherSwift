@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6FB5120225B8D7FF004574F1 /* FeedCachePolicy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FB5120125B8D7FF004574F1 /* FeedCachePolicy.swift */; };
 		6FEC275425B0EFAA002C6792 /* OpenWeatherCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6FEC274A25B0EFA9002C6792 /* OpenWeatherCore.framework */; };
 		6FEC275925B0EFAA002C6792 /* OpenWeatherCoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FEC275825B0EFAA002C6792 /* OpenWeatherCoreTests.swift */; };
 		6FEC275B25B0EFAA002C6792 /* OpenWeatherCore.h in Headers */ = {isa = PBXBuildFile; fileRef = 6FEC274D25B0EFA9002C6792 /* OpenWeatherCore.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -75,6 +76,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		6FB5120125B8D7FF004574F1 /* FeedCachePolicy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedCachePolicy.swift; sourceTree = "<group>"; };
 		6FEC274A25B0EFA9002C6792 /* OpenWeatherCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = OpenWeatherCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6FEC274D25B0EFA9002C6792 /* OpenWeatherCore.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OpenWeatherCore.h; sourceTree = "<group>"; };
 		6FEC274E25B0EFA9002C6792 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -155,6 +157,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6FB5120025B8D7F5004574F1 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				6FB5120125B8D7FF004574F1 /* FeedCachePolicy.swift */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
 		6FEC274025B0EFA9002C6792 = {
 			isa = PBXGroup;
 			children = (
@@ -223,6 +233,7 @@
 		6FEC276B25B0EFE3002C6792 /* Storage */ = {
 			isa = PBXGroup;
 			children = (
+				6FB5120025B8D7F5004574F1 /* Helper */,
 				6FEC276C25B0EFE3002C6792 /* CoreData */,
 				6FEC277D25B0EFE3002C6792 /* NSCache */,
 			);
@@ -570,6 +581,7 @@
 				6FEC27C425B0EFE4002C6792 /* CurrentWeatherQuery.swift in Sources */,
 				6FEC27B925B0EFE4002C6792 /* WeatherRequestDTO.swift in Sources */,
 				6FEC284225B10A52002C6792 /* UseCaseBuilder.swift in Sources */,
+				6FB5120225B8D7FF004574F1 /* FeedCachePolicy.swift in Sources */,
 				6FEC27B225B0EFE4002C6792 /* RemoteDataServiceProtocol.swift in Sources */,
 				6FEC27A425B0EFE3002C6792 /* DefaultCurrentForecastWeather.swift in Sources */,
 				6FEC27C825B0EFE4002C6792 /* Endpoint.swift in Sources */,

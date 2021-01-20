@@ -60,6 +60,7 @@ extension CurrentWeatherResponseDTO {
         entity.clouds = clouds?.toEntity(in: context)
         entity.main =  main?.toEntity(in: context)
         entity.wind = wind?.toEntity(in: context)
+        entity.timestamp = Date()
         return entity
     }
 }

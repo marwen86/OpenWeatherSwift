@@ -7,7 +7,7 @@
 //
 
 import Foundation
-protocol ForecastWeatherRepository {
+protocol ForecastWeatherLoader {
     typealias fetchResult = Swift.Result<[ForecastItem], Error>
     
     func fetch(query: ForecastWeatherQuery,

@@ -77,7 +77,7 @@ public class DetailViewController: UIViewController {
     
     private func setupView(model: CurrentWeatherItemViewModel) {
         self.detailView.updateView(model: model)
-        self.detailView.updateCityTitle(city: city ?? "Paris")
+        self.detailView.updateCityTitle(city: city?.capitalizingFirstLetter() ?? "Paris")
     }
     
     private func updateIcon(image: UIImage) {
