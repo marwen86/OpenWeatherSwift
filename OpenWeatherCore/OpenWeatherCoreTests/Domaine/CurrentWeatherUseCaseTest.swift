@@ -19,34 +19,40 @@ class CurrentWeatherUseCaseTest: XCTestCase {
     }
         
     func test_success_fetchWeatherData() {
+        // Given
         let expectation = self.expectation(description: "search wetaher items1")
         expectation.expectedFulfillmentCount = 1
         var expectedData = [SearchSavedWeatherItem]()
         let repository = CurrentWeatherLoaderMock(fetchAllresponse: .success(CurrentWeatherUseCaseTest.items), fetchResponse: nil)
         let useCase = SavedWeathersUseCase(repository: repository)
         
+        // When
         useCase.execute { result in
             expectedData = (try? result.get()) ?? []
             expectation.fulfill()
         }
         
+        // Then
         XCTAssertEqual(expectedData.count, 2)
         XCTAssertEqual( expectedData.map { $0.city }, ["Paris", "Lille"])
         wait(for: [expectation], timeout: 0.1)
     }
     
     func test_failed_fetchWeatherData() {
+        // Given
         let expectation = self.expectation(description: "search wetaher items2")
         expectation.expectedFulfillmentCount = 1
         var expectedData = [SearchSavedWeatherItem]()
         let repository = CurrentWeatherLoaderMock(fetchAllresponse: .failure(weatherRepositoryTestError.failedFetching), fetchResponse: nil)
         let useCase = SavedWeathersUseCase(repository: repository)
         
+        // When
         useCase.execute { result in
             expectedData = (try? result.get()) ?? []
             expectation.fulfill()
         }
-    
+        
+        // Then
         XCTAssertTrue(expectedData.isEmpty)
         wait(for: [expectation], timeout: 0.1)
     }

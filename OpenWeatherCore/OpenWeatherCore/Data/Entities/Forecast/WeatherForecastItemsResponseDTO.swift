@@ -13,6 +13,8 @@ struct WeatherForecastItemsResponseDTO: Codable {
     enum CodingKeys: String, CodingKey {
         case list
     }
+    
+    static let empty: WeatherForecastItemsResponseDTO = WeatherForecastItemsResponseDTO(list: [])
 }
 
 
