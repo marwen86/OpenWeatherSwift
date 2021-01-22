@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6F62FE7F25BADBC5006B805B /* String+Localized.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F62FE7E25BADBC4006B805B /* String+Localized.swift */; };
+		6F62FE8225BADCA0006B805B /* OpenWeather.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6F62FE7C25BADA51006B805B /* OpenWeather.strings */; };
 		6FA9116225B841D300B15824 /* OpenWeather_UI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6FA9115825B841D200B15824 /* OpenWeather_UI.framework */; };
 		6FA9116725B841D300B15824 /* OpenWeather_UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FA9116625B841D300B15824 /* OpenWeather_UITests.swift */; };
 		6FA9116925B841D300B15824 /* OpenWeather_UI.h in Headers */ = {isa = PBXBuildFile; fileRef = 6FA9115B25B841D200B15824 /* OpenWeather_UI.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -61,6 +63,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		6F62FE7B25BADA51006B805B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/OpenWeather.strings; sourceTree = "<group>"; };
+		6F62FE7E25BADBC4006B805B /* String+Localized.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Localized.swift"; sourceTree = "<group>"; };
+		6F62FE8425BADDFD006B805B /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/OpenWeather.strings; sourceTree = "<group>"; };
 		6FA9115825B841D200B15824 /* OpenWeather_UI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = OpenWeather_UI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6FA9115B25B841D200B15824 /* OpenWeather_UI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OpenWeather_UI.h; sourceTree = "<group>"; };
 		6FA9115C25B841D200B15824 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -137,6 +142,7 @@
 				6FA9117625B8424E00B15824 /* Presentation */,
 				6FA9115B25B841D200B15824 /* OpenWeather_UI.h */,
 				6FA9115C25B841D200B15824 /* Info.plist */,
+				6F62FE7C25BADA51006B805B /* OpenWeather.strings */,
 			);
 			path = "OpenWeather-UI";
 			sourceTree = "<group>";
@@ -205,6 +211,7 @@
 			children = (
 				6FA9118425B8424E00B15824 /* Utilities.swift */,
 				6FA9118525B8424E00B15824 /* Date+Utils.swift */,
+				6F62FE7E25BADBC4006B805B /* String+Localized.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -366,6 +373,7 @@
 			knownRegions = (
 				en,
 				Base,
+				fr,
 			);
 			mainGroup = 6FA9114E25B841D200B15824;
 			productRefGroup = 6FA9115925B841D200B15824 /* Products */;
@@ -384,6 +392,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6FA911A025B8424E00B15824 /* WeatherForecastItemCellTableViewCell.xib in Resources */,
+				6F62FE8225BADCA0006B805B /* OpenWeather.strings in Resources */,
 				6FA911AE25B8424E00B15824 /* CityWeatherTableViewCell.xib in Resources */,
 				6FA911AB25B8424E00B15824 /* CitiesListViewController.xib in Resources */,
 				6FA911A725B8424E00B15824 /* DetailViewController.xib in Resources */,
@@ -405,6 +414,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6F62FE7F25BADBC5006B805B /* String+Localized.swift in Sources */,
 				6FA911A925B8424E00B15824 /* CitiesListViewPresenter.swift in Sources */,
 				6FA911A625B8424E00B15824 /* DetailViewController.swift in Sources */,
 				6FA9119F25B8424E00B15824 /* WeatherForecastItemCellTableViewCell.swift in Sources */,
@@ -443,11 +453,24 @@
 		};
 /* End PBXTargetDependency section */
 
+/* Begin PBXVariantGroup section */
+		6F62FE7C25BADA51006B805B /* OpenWeather.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6F62FE7B25BADA51006B805B /* en */,
+				6F62FE8425BADDFD006B805B /* fr */,
+			);
+			name = OpenWeather.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
 /* Begin XCBuildConfiguration section */
 		6FA9116A25B841D300B15824 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -512,6 +535,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";

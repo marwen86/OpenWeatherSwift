@@ -41,7 +41,7 @@ public class WeatherDetailViewPresenter {
         // create viewModel and update view
         CurrentWeatherItemViewModel(description: item.weather.first?.description ?? "",
                                     icon: item.weather.first?.icon ?? "",
-                                    visibility: "\(String(item.visibility)) km",
+                                    visibility: "\(String(item.visibility/1000)) km",
                                     clouds: String(item.clouds),
                                     temp: "\(String(format:"%.0f", item.temp.kelvinToDeg))°",
                                     feelsLike: "\(String(item.feelsLike))°",

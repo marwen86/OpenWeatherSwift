@@ -32,7 +32,7 @@ public class CitiesListViewController: UIViewController {
         tableView.rowHeight = UITableView.automaticDimension
         tableView.delegate = self
         tableView.dataSource = self
-        self.title = "Welcome"
+        self.title = "HOME_TITLE".textKey
         
         // register cell
         let bundle = Bundle(for: CityWeatherTableViewCell.self)
@@ -47,13 +47,13 @@ public class CitiesListViewController: UIViewController {
     }
 
     @IBAction func addCity(_ sender: Any) {
-        let alert = UIAlertController(title: "Ajouter", message: "Sasir la ville", preferredStyle: .alert)
+        let alert = UIAlertController(title: "COMMON_ADD".textKey, message:"ADD_CITY_WEATHER_TITLE".textKey, preferredStyle: .alert)
         
         alert.addTextField { (textField) in
-            textField.placeholder = "Paris"
+            textField.placeholder = "ADD_CITY_PLACEHOLDER".textKey
         }
         
-        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { [weak alert] (_) in
+        alert.addAction(UIAlertAction(title: "COMMON_OK".textKey, style: .default, handler: { [weak alert] (_) in
             
             guard let alert = alert,
                   let textFields = alert.textFields,
@@ -108,15 +108,21 @@ extension CitiesListViewController: CitiesListViewProtocol {
     public func didAddCityWeatherWithSuccess() {
         //show alert success add new city
         self.interactor?.allCitiesWeather()
-        let alert = UIAlertController(title: "Sucées", message: String(format: "ajouté avec succès sur votre liste."), preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+        let alert = UIAlertController(title: "COMMON_SUCCESS".textKey,
+                                      message: "ADD_WEATHER_SUCCESS_MESSAGE".textKey,
+                                      preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "COMMON_OK".textKey,
+                                      style: .cancel,
+                                      handler: nil))
         self.present(alert, animated: true, completion: nil)
     }
     
     public func set(error: String) {
         // show error message
-        let alert = UIAlertController(title: "Erreur", message: "Le nom de la ville n'existait pas sur notre base de données, veuillez ressayer avec une ville.", preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+        let alert = UIAlertController(title: "COMMON_ERROR".textKey,
+                                      message: "ADD_WEATHER_ERROR_MESSAGE".textKey,
+                                      preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "COMMON_OK".textKey, style: .cancel, handler: nil))
         self.present(alert, animated: true, completion: nil)
     }
 }

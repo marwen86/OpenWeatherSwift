@@ -1,0 +1,17 @@
+/* 
+  OpenWeather.strings
+  OpenWeather-UI
+
+  Created by Youssef Marouane on 22/01/2021.
+  
+*/
+"HOME_TITLE" = "Bienvenue";
+"COMMON_ADD" = "Ajouter";
+"ADD_CITY_WEATHER_TITLE" = "Saisir la ville";
+"ADD_CITY_PLACEHOLDER" = "Paris";
+"COMMON_OK" = "OK";
+"COMMON_SUCCESS" = "Sucées";
+"COMMON_ERROR" = "Erreur";
+"ADD_WEATHER_SUCCESS_MESSAGE" = "ajouté avec succès sur votre liste.";
+"ADD_WEATHER_ERROR_MESSAGE" ="Le nom de la ville n'existait pas sur notre base de données, veuillez ressayer avec une ville.";
+"OPEN_WETAHER_FORECAST" = "Prévisions";

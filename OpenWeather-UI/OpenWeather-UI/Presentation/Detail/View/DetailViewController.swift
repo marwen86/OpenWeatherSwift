@@ -60,7 +60,7 @@ public class DetailViewController: UIViewController {
         super.viewDidLoad()
         
         
-        let add = UIBarButtonItem(title: "Prévisions",
+        let add = UIBarButtonItem(title: "OPEN_WETAHER_FORECAST".textKey,
                                   style: .plain,
                                   target: self,
                                   action: #selector(showForecast))
@@ -77,7 +77,7 @@ public class DetailViewController: UIViewController {
     
     private func setupView(model: CurrentWeatherItemViewModel) {
         self.detailView.updateView(model: model)
-        self.detailView.updateCityTitle(city: city?.capitalizingFirstLetter() ?? "Paris")
+        self.detailView.updateCityTitle(city: city?.capitalizingFirstLetter() ?? "ADD_CITY_PLACEHOLDER".textKey)
     }
     
     private func updateIcon(image: UIImage) {
