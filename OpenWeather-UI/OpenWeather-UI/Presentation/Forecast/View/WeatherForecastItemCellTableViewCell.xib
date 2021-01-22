@@ -32,6 +32,7 @@
                                 <rect key="frame" x="141" y="0.0" width="58" height="55.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="58" id="Mkq-xS-awE"/>
+                                    <constraint firstAttribute="height" constant="55.5" id="lq9-1A-U91"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DBx-5g-CSS">

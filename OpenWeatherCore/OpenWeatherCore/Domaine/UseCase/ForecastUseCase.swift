@@ -28,7 +28,7 @@ class ForecastUseCase: ForecastUseCaseProtocol {
                  count: Int,
                  cached: @escaping (result) -> Void,
                  completion: @escaping (result) -> Void) {
-        let query = ForecastWeatherQuery(query: query, count: 5)
+        let query = ForecastWeatherQuery(query: query, count: 15)
         self.repository.fetch(query: query, cached: cached, completion: completion)
     }
 }
