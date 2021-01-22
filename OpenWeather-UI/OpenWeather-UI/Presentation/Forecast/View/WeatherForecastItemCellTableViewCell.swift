@@ -28,7 +28,7 @@ public class WeatherForecastItemCellTableViewCell: UITableViewCell {
         cell.viewModel = viewModel
     }
     
-    static let height = CGFloat(150)
+    static let height = CGFloat(100)
     static let reuseIdentifier = String(describing: WeatherForecastItemCellTableViewCell.self)
     @IBOutlet private var mintempLabel: UILabel!
     @IBOutlet private var maxtempLabel: UILabel!
